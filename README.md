@@ -72,4 +72,4 @@ $ export port=8000
 
 Then (re)start the application.
 
-<img src="https://github.com/ldaniels528/meansjs-todo-mvc/blob/test/todo-mvc.png">
+<img src="https://github.com/ldaniels528/meansjs-todo-mvc/blob/master/todo-mvc.png">
