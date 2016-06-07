@@ -1,0 +1,24 @@
+{
+  "name": "todo-mvc",
+  "description": "A Todo MVC application",
+  "main": "app.js",
+  "authors": [
+    "Lawrence Daniels <lawrence.daniels@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/meansjs/todo-mvc",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "angularjs#^1.5.6",
+    "AngularJS-Toaster": "toaster#^1.2.0",
+    "angular-route": "^1.5.3"
+  }
+}

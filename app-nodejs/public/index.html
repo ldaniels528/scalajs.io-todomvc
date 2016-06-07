@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS • TodoMVC</title>
+		<link rel="stylesheet" href="stylesheets/base.css">
+		<link rel="stylesheet" href="stylesheets/index.css">
+		<style>[ng-cloak] { display: none; }</style>
+	</head>
+	<body ng-app="todomvc">
+		<toaster-container toaster-options="{'position-class': 'toast-container','time-out': 3000, 'close-button':true}">
+		</toaster-container>
+
+		<div ng-view></div>
+
+		<script type="text/ng-template" id="todomvc-index.html">
+			<section id="todoapp">
+				<header id="header">
+					<h1>todo's</h1>
+					<form id="todo-form" ng-submit="addTodo()">
+						<input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" ng-disabled="saving" autofocus>
+					</form>
+				</header>
+				<section id="main" ng-show="todos.length" ng-cloak>
+					<input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+					<label for="toggle-all">Mark all as complete</label>
+					<ul id="todo-list">
+						<li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+							<div class="view">
+								<input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="saveTodo(todo)">
+								<label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+								<button class="destroy" ng-click="removeTodo(todo)"></button>
+							</div>
+							<form ng-submit="saveEdits(todo, 'submit')">
+								<input class="edit" ng-trim="false" ng-model="todo.title" todo-escape="revertEdits(todo)" ng-blur="saveEdits(todo, 'blur')" todo-focus="todo == editedTodo">
+							</form>
+						</li>
+					</ul>
+				</section>
+				<footer id="footer" ng-cloak>
+					<span id="todo-count"><strong>{{remainingCount}}</strong>
+						<ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+					</span>
+					<ul id="filters">
+						<li>
+							<a ng-class="{selected: status == ''} " href="#/">All</a>
+						</li>
+						<li>
+							<a ng-class="{selected: status == 'active'}" href="#/active">Active</a>
+						</li>
+						<li>
+							<a ng-class="{selected: status == 'completed'}" href="#/completed">Completed</a>
+						</li>
+					</ul>
+					<button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed</button>
+				</footer>
+			</section>
+			<footer id="info">
+				<p>Double-click to edit a todo</p>
+				<p>Credits:
+					<a href="http://twitter.com/cburgdorf">Christoph Burgdorf</a>,
+					<a href="http://ericbidelman.com">Eric Bidelman</a>,
+					<a href="http://jacobmumm.com">Jacob Mumm</a> and
+					<a href="http://blog.igorminar.com">Igor Minar</a>
+				</p>
+				<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			</footer>
+		</script>
+
+		<!-- Bower JS libraries -->
+		<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+		<script src="/bower_components/AngularJS-Toaster/toaster.min.js" type="text/javascript"></script>
+
+		<!-- Application JS libraries -->
+		<script src="javascripts/todo-mvc-angularjs-fastopt.js"></script>
+		<script src="javascripts/todo-mvc-angularjs-launcher.js"></script>
+
+		<script src="javascripts/app.js"></script>
+		<script src="javascripts/base.js"></script>
+		<script src="javascripts/directives/todoFocus.js"></script>
+		<script src="javascripts/directives/todoEscape.js"></script>
+	</body>
+</html>

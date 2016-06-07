@@ -1,0 +1,35 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Scala template
+*.class
+*.log
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+.gitignore
+.idea/
+app-angularjs/project/
+app-angularjs/src/main/scala-2.11/
+app-angularjs/target/
+app-commonjs/project/
+app-commonjs/src/main/scala-2.11/
+app-commonjs/target/
+app-nodejs/project/
+app-nodejs/src/main/scala-2.11/
+app-nodejs/target/
+src/
+app-nodejs/public/javascripts/todo-mvc-angularjs-fastopt.js
+app-nodejs/public/javascripts/todo-mvc-angularjs-fastopt.js.map
+app-nodejs/public/javascripts/todo-mvc-angularjs-launcher.js

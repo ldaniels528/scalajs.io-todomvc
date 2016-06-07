@@ -1,0 +1,14 @@
+{
+  "name": "todo-mvc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "karma start test/config/karma.conf.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "4.13.4",
+    "express-fileupload": "0.0.5",
+    "express-ws": "^2.0.0-beta"
+  }
+}
