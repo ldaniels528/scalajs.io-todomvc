@@ -67,7 +67,7 @@ The above will startup the application on port 1337 by default. To listen/bind t
 variable.
 
 ```bash
-$ export port=8000
+$ NODE_ENV=development port=8000 node ./server.js
 ```
 
 Then (re)start the application.
