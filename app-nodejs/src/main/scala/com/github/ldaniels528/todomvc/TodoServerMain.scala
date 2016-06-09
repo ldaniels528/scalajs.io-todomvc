@@ -3,7 +3,8 @@ package com.github.ldaniels528.todomvc
 import com.github.ldaniels528.meansjs.nodejs.bodyparser.{BodyParser, UrlEncodedBodyOptions}
 import com.github.ldaniels528.meansjs.nodejs.express.{Express, Request, Response}
 import com.github.ldaniels528.meansjs.nodejs.expressws._
-import com.github.ldaniels528.meansjs.nodejs.{Bootstrap, console, process}
+import com.github.ldaniels528.meansjs.nodejs.global._
+import com.github.ldaniels528.meansjs.nodejs.{Bootstrap, console}
 import com.github.ldaniels528.todomvc.routes._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue

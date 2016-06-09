@@ -5,7 +5,7 @@ import sbt.Project.projectToRef
 import sbt._
 
 val appVersion = "0.1.0"
-val meanjsVersion = "0.1.13"
+val meanjsVersion = "0.1.14"
 val _scalaVersion = "2.11.8"
 
 val paradisePluginVersion = "3.0.0-M1"
@@ -79,6 +79,7 @@ lazy val nodejs = (project in file("app-nodejs"))
     compile in Compile <<=
       (compile in Compile) dependsOn (fastOptJS in(angularjs, Compile)),
     libraryDependencies ++= Seq(
+      "com.github.ldaniels528" %%% "means-node-global" % meanjsVersion,
       "com.github.ldaniels528" %%% "means-node-body-parser" % meanjsVersion,
       "com.github.ldaniels528" %%% "means-node-express" % meanjsVersion,
       "com.github.ldaniels528" %%% "means-node-express-ws" % meanjsVersion,
