@@ -79,11 +79,7 @@ lazy val nodejs = (project in file("app-nodejs"))
     compile in Compile <<=
       (compile in Compile) dependsOn (fastOptJS in(angularjs, Compile)),
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "means-node-global" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-node-body-parser" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-node-express" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-node-express-ws" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-node-os" % meanjsVersion
+      "com.github.ldaniels528" %%% "means-bundle-mean-minimal" % meanjsVersion
     )
   )
 

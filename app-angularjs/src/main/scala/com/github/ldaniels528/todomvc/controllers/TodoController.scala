@@ -5,7 +5,6 @@ import java.lang.{Boolean => JBoolean}
 import com.github.ldaniels528.meansjs.angularjs.AngularJsHelper._
 import com.github.ldaniels528.meansjs.angularjs._
 import com.github.ldaniels528.meansjs.angularjs.toaster.Toaster
-import com.github.ldaniels528.meansjs.core.browser.console
 import com.github.ldaniels528.meansjs.util.ScalaJsHelper._
 import com.github.ldaniels528.todomvc.controllers.TodoController._
 import com.github.ldaniels528.todomvc.models.Todo
@@ -39,8 +38,6 @@ class TodoController($scope: TodoScope, $routeParams: TodoRouteParams, $filter: 
 
   $scope.addTodo = () => {
     val newTodo = Todo(title = $scope.newTodo.trim, completed = false)
-    console.log(s"newTodo = ${angular.toJson(newTodo)}")
-
     if (newTodo.hasTitle) {
       $scope.saving = true
 
@@ -144,7 +141,6 @@ class TodoController($scope: TodoScope, $routeParams: TodoRouteParams, $filter: 
       case "completed" => StatusFilter(completed = true)
       case _ => StatusFilter()
     }
-    console.log(s"Route changed: status = ${$scope.status}, statusFilter = ${angular.toJson($scope.statusFilter)}")
   })
 
   /////////////////////////////////////////////////////////////////////////////////
@@ -154,7 +150,6 @@ class TodoController($scope: TodoScope, $routeParams: TodoRouteParams, $filter: 
   private def loadTodos() = {
     todoStorage.getAll onComplete {
       case Success(todos) =>
-        console.log("Loaded %d todos...", todos.length)
         $scope.$apply(() => setTodos(todos))
       case Failure(e) =>
         toaster.error("Retrieve Error", e.displayMessage)
@@ -166,8 +161,6 @@ class TodoController($scope: TodoScope, $routeParams: TodoRouteParams, $filter: 
     $scope.remainingCount = $scope.todos.count(!_.completed)
     $scope.completedCount = $scope.todos.length - $scope.remainingCount
     $scope.allChecked = $scope.remainingCount == 0
-    console.log("completedCount = %d, remainingCount = %d, allChecked = %s", $scope.completedCount, $scope.remainingCount, $scope.allChecked)
-    console.log(s"todos = ${angular.toJson(todos, pretty = true)}")
   }
 
 }
