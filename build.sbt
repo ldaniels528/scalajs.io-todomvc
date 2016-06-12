@@ -5,7 +5,7 @@ import sbt.Project.projectToRef
 import sbt._
 
 val appVersion = "0.1.0"
-val meanjsVersion = "0.1.14"
+val meanjsVersion = "0.1.15"
 val _scalaVersion = "2.11.8"
 
 val paradisePluginVersion = "3.0.0-M1"
@@ -26,7 +26,7 @@ val jsCommonSettings = Seq(
   relativeSourceMaps := true,
   persistLauncher := true,
   persistLauncher in Test := false,
-  homepage := Some(url("https://github.com/meansjs/todo-mvc")),
+  homepage := Some(url("https://github.com/means-js/means-js-todomvc")),
   addCompilerPlugin("org.scalamacros" % "paradise" % paradisePluginVersion cross CrossVersion.full),
   ivyScala := ivyScala.value map (_.copy(overrideScalaVersion = true)),
   libraryDependencies ++= Seq(
@@ -36,12 +36,12 @@ val jsCommonSettings = Seq(
   )
 )
 
-lazy val commonjs = (project in file("app-commonjs"))
+lazy val shared = (project in file("app-shared"))
   .enablePlugins(ScalaJSPlugin)
   .settings(jsCommonSettings: _*)
   .settings(
-    name := "todo-mvc-commonjs",
-    organization := "com.github.ldaniels528",
+    name := "todomvc-shared",
+    organization := "org.means-js",
     version := appVersion,
     libraryDependencies ++= Seq(
       "com.github.ldaniels528" %%% "means-core" % meanjsVersion
@@ -50,12 +50,12 @@ lazy val commonjs = (project in file("app-commonjs"))
 
 lazy val angularjs = (project in file("app-angularjs"))
   .enablePlugins(ScalaJSPlugin)
-  .aggregate(commonjs)
-  .dependsOn(commonjs)
+  .aggregate(shared)
+  .dependsOn(shared)
   .settings(jsCommonSettings: _*)
   .settings(
-    name := "todo-mvc-angularjs",
-    organization := "com.github.ldaniels528",
+    name := "todomvc-angularjs",
+    organization := "org.means-js",
     version := appVersion,
     libraryDependencies ++= Seq(
       "com.github.ldaniels528" %%% "means-angularjs-core" % meanjsVersion,
@@ -65,13 +65,13 @@ lazy val angularjs = (project in file("app-angularjs"))
   )
 
 lazy val nodejs = (project in file("app-nodejs"))
-  .aggregate(commonjs)
-  .dependsOn(commonjs, angularjs)
+  .aggregate(shared)
+  .dependsOn(shared, angularjs)
   .enablePlugins(ScalaJSPlugin)
   .settings(jsCommonSettings: _*)
   .settings(
-    name := "todo-mvc-nodejs",
-    organization := "com.github.ldaniels528",
+    name := "todomvc-nodejs",
+    organization := "org.means-js",
     version := appVersion,
     Seq(packageScalaJSLauncher, fastOptJS, fullOptJS) map { packageJSKey =>
       crossTarget in(angularjs, Compile, packageJSKey) := baseDirectory.value / "public" / "javascripts"

@@ -33,3 +33,6 @@ src/
 app-nodejs/public/javascripts/todo-mvc-angularjs-fastopt.js
 app-nodejs/public/javascripts/todo-mvc-angularjs-fastopt.js.map
 app-nodejs/public/javascripts/todo-mvc-angularjs-launcher.js
+app-nodejs/public/javascripts/todomvc-angularjs-fastopt.js
+app-nodejs/public/javascripts/todomvc-angularjs-fastopt.js.map
+app-nodejs/public/javascripts/todomvc-angularjs-launcher.js
