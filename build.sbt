@@ -5,7 +5,7 @@ import sbt.Project.projectToRef
 import sbt._
 
 val appVersion = "0.1.0"
-val meanjsVersion = "0.1.15"
+val meanjsVersion = "0.2.0"
 val _scalaVersion = "2.11.8"
 
 val paradisePluginVersion = "3.0.0-M1"
@@ -41,10 +41,10 @@ lazy val shared = (project in file("app-shared"))
   .settings(jsCommonSettings: _*)
   .settings(
     name := "todomvc-shared",
-    organization := "org.means-js",
+    organization := "com.github.ldaniels528",
     version := appVersion,
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "means-core" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-common" % meanjsVersion
     )
   )
 
@@ -55,12 +55,12 @@ lazy val angularjs = (project in file("app-angularjs"))
   .settings(jsCommonSettings: _*)
   .settings(
     name := "todomvc-angularjs",
-    organization := "org.means-js",
+    organization := "com.github.ldaniels528",
     version := appVersion,
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "means-angularjs-core" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-angularjs-toaster" % meanjsVersion,
-      "com.github.ldaniels528" %%% "means-angularjs-ui-router" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-angularjs-core" % meanjsVersion,
+      "com.github.ldaniels528" %%% "scalajs-angularjs-toaster" % meanjsVersion,
+      "com.github.ldaniels528" %%% "scalajs-angularjs-ui-router" % meanjsVersion
     )
   )
 
@@ -71,7 +71,7 @@ lazy val nodejs = (project in file("app-nodejs"))
   .settings(jsCommonSettings: _*)
   .settings(
     name := "todomvc-nodejs",
-    organization := "org.means-js",
+    organization := "com.github.ldaniels528",
     version := appVersion,
     Seq(packageScalaJSLauncher, fastOptJS, fullOptJS) map { packageJSKey =>
       crossTarget in(angularjs, Compile, packageJSKey) := baseDirectory.value / "public" / "javascripts"
@@ -79,7 +79,7 @@ lazy val nodejs = (project in file("app-nodejs"))
     compile in Compile <<=
       (compile in Compile) dependsOn (fastOptJS in(angularjs, Compile)),
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "means-bundle-mean-minimal" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-nodejs-mean-bundle-minimal" % meanjsVersion
     )
   )
 

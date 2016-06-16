@@ -2,10 +2,10 @@ package com.github.ldaniels528.todomvc.routes
 
 import java.util.UUID
 
-import com.github.ldaniels528.meansjs.nodejs.NodeRequire
-import com.github.ldaniels528.meansjs.nodejs.express.{Application, Request, Response}
-import com.github.ldaniels528.meansjs.util.ScalaJsHelper._
 import com.github.ldaniels528.todomvc.models.Todo
+import org.scalajs.nodejs.NodeRequire
+import org.scalajs.nodejs.express.{Application, Request, Response}
+import org.scalajs.nodejs.util.ScalaJsHelper._
 
 import scala.concurrent.ExecutionContext
 import scala.scalajs.js

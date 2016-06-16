@@ -1,7 +1,7 @@
 package com.github.ldaniels528.todomvc.services
 
-import com.github.ldaniels528.meansjs.angularjs._
-import com.github.ldaniels528.meansjs.angularjs.http.Http
+import org.scalajs.angularjs._
+import org.scalajs.angularjs.http.Http
 import com.github.ldaniels528.todomvc.models.Todo
 
 import scala.scalajs.js

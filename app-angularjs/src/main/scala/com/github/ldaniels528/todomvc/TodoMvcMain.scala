@@ -1,7 +1,7 @@
 package com.github.ldaniels528.todomvc
 
-import com.github.ldaniels528.meansjs.angularjs.{Scope, angular}
-import com.github.ldaniels528.meansjs.core.browser.console
+import org.scalajs.angularjs._
+import org.scalajs.dom.browser.console
 import com.github.ldaniels528.todomvc.controllers.TodoController
 import com.github.ldaniels528.todomvc.services._
 

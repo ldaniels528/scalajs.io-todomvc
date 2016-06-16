@@ -2,13 +2,13 @@ package com.github.ldaniels528.todomvc.controllers
 
 import java.lang.{Boolean => JBoolean}
 
-import com.github.ldaniels528.meansjs.angularjs.AngularJsHelper._
-import com.github.ldaniels528.meansjs.angularjs._
-import com.github.ldaniels528.meansjs.angularjs.toaster.Toaster
-import com.github.ldaniels528.meansjs.util.ScalaJsHelper._
 import com.github.ldaniels528.todomvc.controllers.TodoController._
 import com.github.ldaniels528.todomvc.models.Todo
 import com.github.ldaniels528.todomvc.services.TodoStorageService
+import org.scalajs.angularjs.AngularJsHelper._
+import org.scalajs.angularjs._
+import org.scalajs.angularjs.toaster.Toaster
+import org.scalajs.nodejs.util.ScalaJsHelper._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js

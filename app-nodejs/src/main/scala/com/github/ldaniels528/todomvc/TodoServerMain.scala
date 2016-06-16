@@ -1,11 +1,11 @@
 package com.github.ldaniels528.todomvc
 
-import com.github.ldaniels528.meansjs.nodejs.bodyparser.{BodyParser, UrlEncodedBodyOptions}
-import com.github.ldaniels528.meansjs.nodejs.express.{Express, Request, Response}
-import com.github.ldaniels528.meansjs.nodejs.expressws._
-import com.github.ldaniels528.meansjs.nodejs.global._
-import com.github.ldaniels528.meansjs.nodejs.{Bootstrap, console}
 import com.github.ldaniels528.todomvc.routes._
+import org.scalajs.nodejs.bodyparser.{BodyParser, UrlEncodedBodyOptions}
+import org.scalajs.nodejs.express.{Express, Request, Response}
+import org.scalajs.nodejs.expressws._
+import org.scalajs.nodejs.global._
+import org.scalajs.nodejs.{Bootstrap, console}
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js
