@@ -29,6 +29,7 @@ val jsCommonSettings = Seq(
   homepage := Some(url("https://github.com/means-js/means-js-todomvc")),
   addCompilerPlugin("org.scalamacros" % "paradise" % paradisePluginVersion cross CrossVersion.full),
   ivyScala := ivyScala.value map (_.copy(overrideScalaVersion = true)),
+  resolvers += "releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
   libraryDependencies ++= Seq(
     "be.doeraene" %%% "scalajs-jquery" % scalaJsJQueryVersion,
     "org.scala-js" %%% "scalajs-dom" % scalaJsDomVersion,
