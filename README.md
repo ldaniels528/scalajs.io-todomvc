@@ -69,4 +69,4 @@ $ NODE_ENV=development port=8000 node ./server.js
 
 Then (re)start the application.
 
-<img src="https://github.com/ldaniels528/meansjs-todo-mvc/blob/master/todo-mvc-screenshot.png">
+<img src="https://github.com/ldaniels528/transcendent-js-todomvc/blob/master/todo-mvc-screenshot.png">
