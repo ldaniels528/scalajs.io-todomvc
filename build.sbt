@@ -5,7 +5,7 @@ import sbt.Project.projectToRef
 import sbt._
 
 val appVersion = "0.1.0"
-val meanjsVersion = "0.2.0"
+val transcendentVersion = "0.2.3.2"
 val _scalaVersion = "2.11.8"
 
 val paradisePluginVersion = "3.0.0-M1"
@@ -26,7 +26,7 @@ val jsCommonSettings = Seq(
   relativeSourceMaps := true,
   persistLauncher := true,
   persistLauncher in Test := false,
-  homepage := Some(url("https://github.com/means-js/means-js-todomvc")),
+  homepage := Some(url("https://github.com/ldaniels528/transcendent-js-todomvc")),
   addCompilerPlugin("org.scalamacros" % "paradise" % paradisePluginVersion cross CrossVersion.full),
   ivyScala := ivyScala.value map (_.copy(overrideScalaVersion = true)),
   resolvers += "releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
@@ -45,7 +45,7 @@ lazy val shared = (project in file("app-shared"))
     organization := "com.github.ldaniels528",
     version := appVersion,
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "scalajs-common" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-common" % transcendentVersion
     )
   )
 
@@ -59,9 +59,10 @@ lazy val angularjs = (project in file("app-angularjs"))
     organization := "com.github.ldaniels528",
     version := appVersion,
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "scalajs-angularjs-core" % meanjsVersion,
-      "com.github.ldaniels528" %%% "scalajs-angularjs-toaster" % meanjsVersion,
-      "com.github.ldaniels528" %%% "scalajs-angularjs-ui-router" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-common" % transcendentVersion,
+      "com.github.ldaniels528" %%% "scalajs-angularjs-core" % transcendentVersion,
+      "com.github.ldaniels528" %%% "scalajs-angularjs-toaster" % transcendentVersion,
+      "com.github.ldaniels528" %%% "scalajs-angularjs-ui-router" % transcendentVersion
     )
   )
 
@@ -80,7 +81,7 @@ lazy val nodejs = (project in file("app-nodejs"))
     compile in Compile <<=
       (compile in Compile) dependsOn (fastOptJS in(angularjs, Compile)),
     libraryDependencies ++= Seq(
-      "com.github.ldaniels528" %%% "scalajs-nodejs-mean-bundle-minimal" % meanjsVersion
+      "com.github.ldaniels528" %%% "scalajs-npm-mean-bundle-minimal" % transcendentVersion
     )
   )
 

@@ -4,7 +4,7 @@ import com.github.ldaniels528.todomvc.routes._
 import org.scalajs.nodejs.bodyparser.{BodyParser, UrlEncodedBodyOptions}
 import org.scalajs.nodejs.express.{Express, Request, Response}
 import org.scalajs.nodejs.expressws._
-import org.scalajs.nodejs.global._
+import org.scalajs.nodejs.globals._
 import org.scalajs.nodejs.{Bootstrap, console}
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue

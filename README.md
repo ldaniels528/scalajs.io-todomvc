@@ -1,7 +1,7 @@
 # Todo MVC 
 <img src="https://github.com/tastejs/todomvc/blob/master/media/logo.png">
 
-This is an example implementation of TodoMVC, which was developed to showcase typical usage of the [MEANS.js](https://github.com/ldaniels528/MEANS.js) platform 
+This is an example implementation of TodoMVC, which was developed to showcase typical usage of the [Transcendent.js](https://github.com/ldaniels528/transcendent.js) platform 
 (a Scala.js implementation of the Node SDK and MEAN stack).
 
 For more details, please refer to the documentation of the original project:
@@ -19,9 +19,6 @@ This project is comprised of 3 sub-projects:
 #### Build Requirements
 
 * [Scala 2.11.8+] (http://scala-lang.org/download/)
-* [Scala.js 0.6.8] (http://www.scala-js.org/)
-* [SBT 0.13.11+] (http://www.scala-sbt.org/download.html)
-* [MEANS.js 0.1.13] (https://github.com/ldaniels528/MEANS.js)
 
 **NOTE:** You'll also need to have a working installation of the Node package manager (npm) and bower.
 
